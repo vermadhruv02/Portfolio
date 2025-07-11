@@ -1,5 +1,5 @@
 "use client";
-import getProject from "@/api/route";
+import getProject from "@/config/config";
 import {ShineBorder} from "@/components/ui/shine-border";
 import SkeletonUI from "@/components/SkeletonUI";
 // import Image from "next/image";
@@ -15,6 +15,17 @@ import {ScrollProgress} from "@/components/ui/scroll-progress";
 import { useQuery } from "@tanstack/react-query";
 import { format } from "date-fns";
 import { NumberTicker } from "@/components/ui/number-ticker";
+
+interface PostType {
+  _id: string;
+  title: string;
+  details: string;  
+  image: string;
+  category: string;
+  sourceCode: string;
+  liveLink?: string;
+  createdAt: string;
+}
 
 function Project() {
   const { data, isLoading} = useQuery({
@@ -63,7 +74,7 @@ function Project() {
             <div
               className={`grid gap-6   gap-y-6 py-6 md:grid-cols-2  rounded-xl lg:grid-cols-3 `}
             >
-              {data?.project?.map((post: any) => (
+              {data?.project?.map((post: PostType) => (
                 <ShineBorder
                   key={post?._id}
                   className="relative flex flex-col items-center justify-center overflow-hidden rounded-xl border bg-background md:shadow-xl p-[1px]"
