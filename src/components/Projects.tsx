@@ -1,5 +1,5 @@
 "use client";
-import getProject from "@/api/cron/route";
+import  getProject  from "@/config/config";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 // import Image from "next/image";
@@ -12,7 +12,16 @@ import SkeletonUI2 from "./SkeletonUI2";
 import { useQuery } from "@tanstack/react-query";
 
 export function Projects() {
-  const { data, isLoading, isError, error, isFetched } = useQuery({
+  interface postType {
+    _id: string;
+    title: string;
+    details: string;
+    image: string;
+    category: string;   
+    sourceCode: string;
+    liveLink?: string;
+  }
+  const { data, isLoading, isError, error} = useQuery({
     queryKey: ["project"],
     queryFn: async () => {
       return await getProject();
@@ -56,7 +65,7 @@ export function Projects() {
         {/* Project Cards */}
         {!isLoading && (
           <div className="grid gap-6 py-6 md:grid-cols-2 lg:grid-cols-3 w-full max-w-6xl mx-auto">
-            {post?.map((post: any) => (
+            {post?.map((post: postType) => (
               <div
                 key={post?.title}
                 className="group relative border rounded-xl dark:bg-slate-900 bg-slate-100 shadow-md"

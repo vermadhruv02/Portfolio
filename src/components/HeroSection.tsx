@@ -1,5 +1,5 @@
 // import Image from "react-image";
-import heroImage from "../../public/hero-image.jpeg";
+// import heroImage from "../../public/hero-image.jpeg";
 import {
   FaGithub,
   FaLinkedin,
@@ -8,7 +8,7 @@ import {
   FaHtml5,
   FaCss3,
   FaBootstrap,
-  FaXTwitter,
+  // FaXTwitter,
 } from "react-icons/fa6";
 import { DiMongodb } from "react-icons/di";
 import { RiJavascriptFill } from "react-icons/ri";                

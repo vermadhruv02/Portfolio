@@ -1,5 +1,3 @@
-import React from "react";
-
 const SkeletonUI2 = () => {
   return (
     <div className="group relative border rounded-xl dark:bg-slate-800 bg-slate-300 shadow-md animate-pulse">

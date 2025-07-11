@@ -1,5 +1,5 @@
 "use client";
-import getProject from "@/api/cron/route";
+import getProject from "@/api/route";
 import {ShineBorder} from "@/components/ui/shine-border";
 import SkeletonUI from "@/components/SkeletonUI";
 // import Image from "next/image";
