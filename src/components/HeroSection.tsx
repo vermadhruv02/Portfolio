@@ -51,7 +51,7 @@ function HeroSection() {
         <div className="flex lg:flex-row flex-col  justify-center px-4 py-10 lg:px-6">
           <div className="flex flex-col justify-center px-4 py-10 lg:z-40 ">
             <div className="mt-2 flex max-w-max items-center space-x-2 rounded-full border p-2">
-              <SparklesText className="mx-2  " text="Hey there!🙂" />
+              <SparklesText className="mx-2 text-xl" text="Hello Everyone!🙂" />
             </div>
             <h1 className="mt-3 max-w-4xl text-3xl  font-extrabold tracking-tight md:text-4xl lg:text-6xl flex">
               <span className="mr-3 font-medium">I'm</span>
@@ -65,7 +65,7 @@ function HeroSection() {
                 <FlipWords words={words} />
               </div>
             </h2>
-            <p className="mt-5  text-base font-medium lg:w-4/5">
+            <p className="mt-5  text-base font-medium text-justify lg:w-4/5">
               Welcome to my portfolio! I hope you enjoy your visit. I specialize
               in Back-End development with Node.js and Front-End development
               with React.js. I have worked on various projects, including a Real{" "}
@@ -86,7 +86,7 @@ function HeroSection() {
                 <FaGithub className="h-7 w-7" />
               </a>
               <a
-                href="https://www.linkedin.com/in/dhruv-verma-31330730b/"
+                href="https://www.linkedin.com/in/dhruvverma-cse/"
                 target="_blank"
               >
                 <FaLinkedin className="h-7 w-7" />
@@ -98,7 +98,8 @@ function HeroSection() {
             <div className="mt-5">
               <div className="flex mt-5 gap-x-2 border-white border-collapse rounded">
                 <a
-                  href="https://docs.google.com/document/d/1gsEp9EQCeIMOshffV0mahFRmaGccAfC0dkN68o3ETxE/edit?usp=sharing"
+                  // href="https://docs.google.com/document/d/1gsEp9EQCeIMOshffV0mahFRmaGccAfC0dkN68o3ETxE/edit?usp=sharing"
+                  href="https://drive.google.com/file/d/1ji6_1tthTzFpYAn7tK_Nie49bbQneI7j/view?usp=sharing"
                   target="_blank"
                 >
                   <ShimmerButton className="shadow-2xl">
@@ -121,7 +122,7 @@ function HeroSection() {
             </div>
           </div>
 
-          <div className="relative flex px-20 lg:h-[500px] h-[330px] w-full  flex-col items-center justify-center overflow-hidden ">
+          <div className="relative flex px-20 lg:h-[500px] h-[350px] w-full  flex-col items-center justify-center overflow-hidden ">
             <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300 bg-clip-text text-center lg:text-8xl text-5xl font-semibold leading-none text-transparent dark:from-white dark:to-black">
               Skills
             </span>
