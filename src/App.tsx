@@ -7,6 +7,7 @@ import Home from './pages/Home.tsx';
 import Project from './pages/Projects.tsx';
 import About from './pages/About.tsx';
 import { ContentUs } from './pages/ContactUs.tsx';
+import Footer from './components/Footer.tsx';
 const App: React.FC = () => {
 
   return (
@@ -20,6 +21,7 @@ const App: React.FC = () => {
       <Route path="/contact" element={<ContentUs/>} />
       <Route path='/portfolio' element={<EnhancedPortfolio/>}/>
       </Routes>
+      <Footer />
 
 
     </div>
