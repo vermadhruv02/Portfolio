@@ -1,4 +1,4 @@
-import React, { createContext,  useState, useEffect, ReactNode } from 'react';
+import React, { createContext, useState, useEffect, ReactNode } from 'react';
 
 export interface DarkModeContextType {
   isDarkMode: boolean;
@@ -8,13 +8,25 @@ export interface DarkModeContextType {
 const DarkModeContext = createContext<DarkModeContextType | undefined>(undefined);
 
 export const DarkModeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const getSystemPreference = () => {
+    // Get system theme preference
+    console.log( 'window.matchMedia', window.matchMedia);
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  };
+
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
     const savedMode = localStorage.getItem('darkMode');
-    return savedMode ? JSON.parse(savedMode) : false;
+    if (savedMode) {
+      return JSON.parse(savedMode);
+    }
+    // Default to system preference if no saved mode
+    return getSystemPreference();
   });
 
   useEffect(() => {
+    // Save the theme preference to localStorage
     localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
+
     if (isDarkMode) {
       document.documentElement.classList.add('dark');
     } else {
@@ -33,6 +45,7 @@ export const DarkModeProvider: React.FC<{ children: ReactNode }> = ({ children }
   );
 };
 
+// Optional: For consuming context elsewhere
 // export const useDarkMode = () => {
 //   const context = useContext(DarkModeContext);
 //   if (context === undefined) {
@@ -41,4 +54,4 @@ export const DarkModeProvider: React.FC<{ children: ReactNode }> = ({ children }
 //   return context;
 // };
 
-export { DarkModeContext }
+export { DarkModeContext };
