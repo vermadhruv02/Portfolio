@@ -28,10 +28,10 @@ const Navbar: React.FC = () => {
             name: "About",
             url: "/about"
         },
-        // {
-        //     name: "Contact",
-        //     url: "/contact"
-        // }
+        {
+            name: "Contact",
+            url: "/contact"
+        }
     ];
     
     return (

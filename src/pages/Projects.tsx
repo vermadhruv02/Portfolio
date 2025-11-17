@@ -31,7 +31,7 @@ function Project() {
   const { data, isLoading} = useQuery({
     queryKey: ["projects"],
     queryFn: async () => {
-      return await getProject();
+      return await getProject();  
     },
     staleTime: 60000,
   });
@@ -98,7 +98,7 @@ function Project() {
                           : post?.title}
                       </p>
                       <p
-                        className="mt-2 w-full text-sm leading-normal "
+                        className="mt-2 w-full text-sm text-justify leading-normal "
                         title={post?.details}
                       >
                         {post?.details.length > 150
@@ -119,7 +119,7 @@ function Project() {
                       <div className="mt-4 flex lg:space-x-3 space-x-2 ">
                         <img
                           className="h-full lg:w-10 w-8 rounded-lg"
-                          // src={post?.avatar}
+                          src="https://res.cloudinary.com/ducahghzl/image/upload/v1754679022/SAVE_20250809_242008_jxlejy.jpg"
                           width={500}
                           height={500}
                         //   blurDataURL="blur"
@@ -191,7 +191,7 @@ function Project() {
                           >
                             {/* <button className="inset-x-0 flex gap-x-1 items-center rounded-lg shadow-md px-3 py-2.5 text-sm font-semibold transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 bg-slate-800 text-white hover:bg-slate-700/90">
                               <FaGithub className="font-extrabold text-lg" />{" "}
-                              Code
+                               Code
                             </button> */}
                             <HoverBorderGradient
                               containerClassName="rounded-lg"

@@ -137,3 +137,37 @@
     @apply bg-background text-foreground;
   }
 }
+
+.custom-quill pre {
+  background-color: #1e1e1e;
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 12px 0;
+  font-size: 0.9rem;
+}
+
+.custom-quill code {
+  background-color: rgba(0,0,0,0.1);
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.custom-quill ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+}
+
+.custom-quill ol {
+  list-style: decimal;
+  margin-left: 1.5rem;
+}
+
+.custom-quill h1, 
+.custom-quill h2,
+.custom-quill h3 {
+  margin-top: 1.2rem;
+  margin-bottom: .5rem;
+}

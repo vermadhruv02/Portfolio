@@ -6,8 +6,10 @@ import {  Route, Routes } from 'react-router-dom';
 import Home from './pages/Home.tsx';
 import Project from './pages/Projects.tsx';
 import About from './pages/About.tsx';
-import { ContentUs } from './pages/ContactUs.tsx';
+import ContactUs from './pages/ContactUs.tsx';
 import Footer from './components/Footer.tsx';
+import ProjectForm from './pages/ProjectForm.tsx';
+import ProjectPage from './pages/ProjectPage.tsx';
 const App: React.FC = () => {
 
   return (
@@ -17,8 +19,10 @@ const App: React.FC = () => {
       <Routes>
       <Route path="/" element={<Home/>} />
       <Route path="/projects" element={<Project/>} />
+      <Route path="/project/:id" element={<ProjectPage />} />
       <Route path="/about" element={<About/>} />
-      <Route path="/contact" element={<ContentUs/>} />
+      <Route path="/project-form" element={<ProjectForm />} />
+      <Route path="/contact" element={<ContactUs/>} />
       <Route path='/portfolio' element={<EnhancedPortfolio/>}/>
       </Routes>
       <Footer />

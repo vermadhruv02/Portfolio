@@ -1,5 +1,12 @@
 
-import { ContentUs } from "./ContactUs";
+import {BoxReveal} from "@/components/ui/box-reveal";
+
+// import Ranju from "../../public/hero-image.jpeg";//public/hero-image.jpeg
+import Ranju from "../../public/Image.avif";//public/hero-image.jpeg
+// import {ShinyButton} from "@/components/ui/shiny-button";
+// import Image from "@/components/Image";
+// import { Link } from "react-router-dom";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 // import SplashCursor from "@/components/ui/SplashCursor";
 function About() {
   return (
@@ -7,7 +14,57 @@ function About() {
       {/* <SplashCursor /> */}
       <div>
         <div className="mx-auto max-w-7xl px-4 lg:py-20">
-          <ContentUs />
+          <div className="relative flex flex-col-reverse rounded-xl py-16 my-20 pt-20 lg:dark:bg-slate-900 lg:bg-slate-100 lg:pt-0 lg:flex-col lg:pb-0">
+                <BackgroundBeams />
+                <div className="inset-y-0 top-0 right-0 z-0 w-full  rounded-xl px-4 mx-auto md:px-0 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-7/12 lg:max-w-full lg:absolute xl:px-0">
+                  <svg
+                    className="absolute left-0 hidden h-full z-10 dark:text-slate-900 text-slate-100 transform -translate-x-1/2 lg:block"
+                    viewBox="0 0 100 100"
+                    fill="currentColor"
+                    preserveAspectRatio="none slice"
+                  >
+                    <path d="M50 0H100L50 100H0L50 0Z" />
+                  </svg>
+                  <img
+                    width={500}
+                    height={500}
+                    className="object-cover z-50 overflow-hidden w-full h-56 rounded-xl shadow-lg lg:shadow-none md:h-96 lg:h-full"
+                  //   placeholder="blur"
+                    src={Ranju}
+                    alt="Md Ranju Images"
+                  />
+                </div>
+          
+                <div className="relative flex flex-col items-start w-full z-10  mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl">
+                  <div className="mb-16 lg:my-40 lg:max-w-lg lg:pr-5 z-10">
+                    <BoxReveal boxColor={"#6366f1"} duration={0.5}>
+                      <p className="text-[2rem] font-semibold rounded-lg">
+                        About Me<span className="text-[#6366f1]">.</span>
+                      </p>
+                    </BoxReveal>
+                    <p className="pr-5 mb-5 text-base dark:text-gray-200 text-slate-900 md:text-lg">
+                      Hi, I'm{" "}
+                      <span className="text-xl font-bold md:text-2xl text-indigo-500">
+                        {" "}
+                        Dhruv Verma
+                      </span>
+                      , a passionate full-stack web developer specializing in the MERN (MongoDB, Express.js, React, Node.js) stack. Currently, I’m in my final semester of BTech in Computer Science and Engineering (CSE) (2021-2025), and I’m eager to build scalable, high-performance web applications that create impact.
+                      <br />
+                      <span className="text-xl font-bold md:text-2xl text-indigo-500">
+                        {" "}
+                      My Journey in Tech
+                      </span>
+                      <br />
+                      My fascination with technology started during my school days at Seedling Public School, Jaipur, where I was drawn toward problem-solving and logical reasoning. This passion led me to pursue a career in computer science. Over the years, I have honed my skills in JavaScript, React.js, Node.js, and MongoDB, working on diverse projects that have strengthened my expertise in full-stack development.
+                    </p>
+                    {/* <div className="flex items-center z-10">
+                      <Link to="/contact">
+                        <ShinyButton>Contact Me</ShinyButton>
+                      </Link>
+                    </div> */}
+                  </div>
+                </div>
+              </div>
         </div>
       </div>
     </>
