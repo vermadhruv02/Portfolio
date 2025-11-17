@@ -1,4 +1,5 @@
 // import React from 'react'
+import { Easing } from "framer-motion";
 import HeroSection from "@/components/HeroSection"
 import { FeatureThree } from "@/components/FeatureThree"
 import { Projects } from "@/components/Projects"
@@ -14,7 +15,7 @@ const Home = () => {
     animate: {
       opacity: 1,
       y: 0,
-      transition: { duration: 1, ease: "easeInOut" },
+      transition: { duration: 1, ease: "easeInOut" as Easing },
     },
   };
 
