@@ -10,7 +10,7 @@ import { MdOpenInNew } from "react-icons/md";
 import { useParams, useNavigate } from "react-router-dom";
 import { useQuery} from "@tanstack/react-query";
 import Loading from "@/components/Loading";
-
+import { Safari } from "@/components/ui/safari"
 
 // interface Project {
 //   id: string;
@@ -70,14 +70,15 @@ const ProjectPage = () => {
         </HoverBorderGradient>
         {/* </Link> */}
       </div>
-      <div className="bg-blue-100 w-full h-full rounded-lg drop-shadow-md overflow-hidden">
-        <img
+      <div className=" ">
+        {/* <img
           src={project?.image}
           width={1080}
           height={720}
           alt={project?.title}
           className="w-full dark:brightness-75 dark:hover:brightness-90 "
-        />
+        /> */}
+        <Safari url="magicui.design" imageSrc={project?.image}  />
       </div>
       <div className="mt-6">
         <span className="p-2 text-xs mb-10 border-[2px] rounded-full">

@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { MoonIcon, SunIcon, MenuIcon } from 'lucide-react';
-import { useDarkMode } from '@/hooks/useDarkMode.ts';
+import {  MenuIcon } from 'lucide-react'; //MoonIcon, SunIcon,
+// import { useDarkMode } from '@/hooks/useDarkMode.ts';
 import { Link } from 'react-router-dom';
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler"
 
 const Navbar: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
-    const { isDarkMode, toggleDarkMode } = useDarkMode();
+    // const { isDarkMode, toggleDarkMode } = useDarkMode();
 
     const menuList = [
         {
@@ -77,9 +78,10 @@ const Navbar: React.FC = () => {
                 {/* Dark Mode Button */}
 
                 <div className='hidden md:block '>
-                <Button onClick={toggleDarkMode} variant="outline" className='rounded-full'>
+                {/* <Button onClick={toggleDarkMode} variant="outline" className='rounded-full'>
                         {isDarkMode ? <SunIcon /> : <MoonIcon />}
-                    </Button>
+                    </Button> */}
+                    <AnimatedThemeToggler />
                 </div>
             </div>
 
@@ -90,9 +92,7 @@ const Navbar: React.FC = () => {
                         <Link to={menuItem.url} key={menuItem.name}                         className='hover:text-orange-400 font-bold size-xl'
 >{menuItem.name}</Link>
                     ))}
-                    <Button onClick={toggleDarkMode} variant="ghost">
-                        {isDarkMode ? <SunIcon /> : <MoonIcon />}
-                    </Button>
+                    <AnimatedThemeToggler />
                 </div>
             </div>
         </nav>

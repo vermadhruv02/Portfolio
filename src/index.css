@@ -171,3 +171,8 @@
   margin-top: 1.2rem;
   margin-bottom: .5rem;
 }
+
+::view-transition-old(root), ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+}
