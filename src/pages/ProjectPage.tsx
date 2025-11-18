@@ -48,7 +48,7 @@ const ProjectPage = () => {
  
  
   const handelClick = () => {
-    navigate(-1);   
+    navigate('/projects');   
   };
   
   return (

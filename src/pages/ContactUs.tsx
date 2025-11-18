@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import { FaLocationDot, FaPhone } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
-// import { toast } from "sonner";
+import { toast } from "sonner";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -56,11 +56,11 @@ function ContactUs() {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setLoading(true);
+    // setLoading(true);
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/contacts`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/contacts`,
         {
           method: "POST",
           headers: {
@@ -80,11 +80,11 @@ function ContactUs() {
           phone: "",
           message: "",
         });
-        // toast.success(data.massage);
+        toast.success(data.massage);
         setLoading(false);
       } else {
-        // toast.error(data.error);
-        // console.log(data?.massage);
+        toast.error(data.error);
+        console.log(data?.massage);
         setLoading(false);
       }
     } catch (error) {
@@ -274,7 +274,7 @@ function ContactUs() {
                       </label>
                       <motion.input
                         className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
-                        type="text"
+                        type="email"
                         id="email"
                         placeholder="Email"
                         name="email"
@@ -298,9 +298,10 @@ function ContactUs() {
                       </label>
                       <motion.input
                         className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
-                        type="text"
+                        type="number"
                         id="phone_number"
                         name="phone"
+                        maxLength={10}
                         onChange={handleInputChange}
                         value={formData.phone}
                         placeholder="Phone number"
